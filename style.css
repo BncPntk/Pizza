@@ -1,0 +1,94 @@
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #f18805;
+}
+.navbar {
+  font-weight: 700;
+  background-color: #252422 !important;
+}
+
+.nav-item {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1.7rem;
+  color: #f18805 !important;
+}
+
+.nav-link:hover {
+  text-underline-offset: 8px;
+  text-decoration-line: underline overline;
+  text-decoration-style: wavy;
+  text-decoration-color: #f18805;
+  color: #f25c54 !important;
+  transition: all 0.2s;
+}
+
+.parallax {
+  background-image: url('images/para_pizzabg2.png');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax .text {
+  filter: contrast(150%);
+  font-weight: 700;
+  margin-top: 3rem;
+  color: #ffa500;
+  text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#homeUtalvany {
+  width: 400px;
+}
+
+#homeFoglalasBtn {
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: #252422 !important ;
+  transition: color 0.2s;
+}
+
+#homeFogalasBtn:hover {
+  font-size: 1.7rem;
+  color: #f18805 !important;
+  background-color: #252422 !important ;
+}
+
+#Homerolunk {
+  width: 100%;
+  min-height: 370px;
+  background-color: #252422;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+#Homerolunk p {
+  font-size: 1.4rem;
+  width: 60%;
+  color: #f18805;
+}
+
+.kinalatP {
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .nav-link:hover {
+    text-decoration: none;
+  }
+  #homeUtalvany {
+    width: 300px;
+  }
+  #Homerolunk p {
+    width: 90%;
+  }
+}
