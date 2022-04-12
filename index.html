@@ -42,16 +42,19 @@
         <div class="collapse navbar-collapse justify-content-end mx-5 mx-md-4" id="mainNavbar">
           <ul class="navbar-nav text-uppercase">
             <li class="nav-item">
-              <a href="#" class="nav-link">&ensp;Pizzák&ensp;</a>
+              <a href="#kinalatPizza" id="pizzaBtn" onclick="scroll()" class="nav-link">&ensp;Pizza&ensp;</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">&ensp;Tálak&ensp;</a>
+              <a href="#kinalatGyros" id="gyrosbtn" class="nav-link">&ensp;Gyros&ensp;</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">&ensp;Foglalás&ensp;</a>
+              <a href="#kinalatUdito" id="foglalasbtn" class="nav-link">&ensp;Üditő&ensp;</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">&ensp;Elérhetőség&ensp;</a>
+              <a href="#kinalatUdito" id="foglalasbtn" class="nav-link">&ensp;Asztal Foglalás&ensp;</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" id="infobtn" class="nav-link">&ensp;Elérhetőség&ensp;</a>
             </li>
           </ul>
         </div>
@@ -97,7 +100,7 @@
     </div>
 
     <div class="container">
-      <h2 id="kinalat" class="display-2 text-center mt-3">Pizzák</h2>
+      <h2 id="kinalatPizza" class="display-2 text-center mt-3">Pizzák</h2>
       <hr />
 
       <div id="container" class="row text-center">
@@ -129,6 +132,26 @@
         <!-- DIV END -->
       </div>
     </div>
+
+    <div id="homeBorder" class="container-fluid"></div>
+
+    <!-- GYROS -->
+    <div class="container">
+      <h2 id="kinalatGyros" class="display-2 text-center mt-3">Gyrosok</h2>
+      <hr />
+
+      <div id="container2" class="row text-center"></div>
+    </div>
+
+    <div id="homeBorder" class="container-fluid"></div>
+
+    <div class="container">
+      <h2 id="kinalat" class="display-2 text-center mt-3">Üdítők</h2>
+      <hr />
+
+      <div id="container3" class="row text-center"></div>
+    </div>
+
     <script src="script.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script
