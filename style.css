@@ -36,9 +36,9 @@ body {
 
 #homeBorder {
   width: 100%;
-  height: 400px;
+  height: 200px;
   /* background-color: #252422 !important; */
-  background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/main/images/menu/13.jpg');
+  background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/main/images/borderImg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

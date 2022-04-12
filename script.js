@@ -1,8 +1,9 @@
 const container = document.querySelector('#container');
 const container2 = document.querySelector('#container2');
+const container3 = document.querySelector('#container3');
 const pizzaScroll = document.querySelector('.pizzaScroll');
 const baseURL = 'https://raw.githubusercontent.com/BncPntk/Pizza/main/images/menu/'
-// BTNS
+
 
 const menu = [
     {},
@@ -99,24 +100,24 @@ const menu = [
         desc: `eredeti görög feta sajt, eredeti görög joghurt, olívabogyó, paradicsom, hagyma, csirkecomb, fűszeres hasábburgonya`,
         price: '2490',
     },
-    // {
-    //     id: 15,
-    //     name: '',
-    //     desc: ``,
-    //     price: '',
-    // },
-    // {
-    //     id: ,
-    //     name: '',
-    //     desc: ``,
-    //     price: '',
-    // },
-    // {
-    //     id: ,
-    //     name: '',
-    //     desc: ``,
-    //     price: '',
-    // },
+    {
+        id: 15,
+        name: '0,5l CocaCola',
+        desc: ``,
+        price: '450',
+    },
+    {
+        id: 16,
+        name: '0,5l CocaCola Zero',
+        desc: ``,
+        price: '450',
+    },
+    {
+        id: 17,
+        name: '0,5l Cherry Coke',
+        desc: ``,
+        price: '450',
+    },
 
 
 ]
@@ -124,18 +125,14 @@ const menu = [
 
 
 
-
-
-// ÁR FORMÁZÁSA
+// FORMIN PRICE
 for (let i = 1; i < 15; i++) {
     let temp = menu[i].price.slice(1);
     let newPrice = `HUF ${menu[i].price[0]},${temp}`
     // console.log(newPrice);
     menu[i].price = newPrice;
 }
-// SCROLL TO 
 
-// ÁR FORMÁZÁSA
 
 // INSERT PIZZA
 const insertItems = function (imageFrom, imageTo, destination) {
@@ -187,6 +184,9 @@ insertItems(1, 10, container);
 
 // INSERT GYROS
 insertItems(11, 14, container2);
+
+// INSERT DRINKS
+insertItems(15, 23, container3);
 // for (let i = 11; i < 15; i++) {
 //     const colDiv = document.createElement('div');
 //     colDiv.classList.add('col-10', 'offset-1', 'offset-md-0', 'col-md-6', 'col-lg-4', 'my-4');
