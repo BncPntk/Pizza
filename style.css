@@ -92,3 +92,22 @@ body {
     width: 90%;
   }
 }
+
+/* MENU */
+.p-height {
+  min-height: 120px;
+}
+.descFont {
+  font-size: 1.1rem;
+}
+.priceText {
+  font-size: 1.3rem;
+}
+.kosarBtn {
+  width: 10rem;
+  font-size: 1rem;
+}
+.kosarBtn:hover {
+  color: #fff;
+  background-color: #f18805;
+}
