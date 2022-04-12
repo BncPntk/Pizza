@@ -135,7 +135,7 @@ for (let i = 1; i < 15; i++) {
 
 
 // INSERT PIZZA
-const insertItems = function (imageFrom, imageTo, destination) {
+const insertItems = function (imageFrom, imageTo, destination, imgType) {
     for (let i = imageFrom; i <= imageTo; i++) {
         const colDiv = document.createElement('div');
         colDiv.classList.add('col-10', 'offset-1', 'offset-md-0', 'col-md-6', 'col-lg-4', 'my-4');
@@ -143,7 +143,7 @@ const insertItems = function (imageFrom, imageTo, destination) {
         cardDiv.classList.add('card');
         const newImg = document.createElement('img');
         newImg.classList.add('rounded-top');
-        newImg.src = `${baseURL}${i}.jpg`;
+        newImg.src = `${baseURL}${i}.${imgType}`;
         const cardBodyDiv = document.createElement('div');
         cardBodyDiv.classList.add('card-body');
         const h5 = document.createElement('h5');
@@ -180,13 +180,13 @@ const insertItems = function (imageFrom, imageTo, destination) {
         destination.appendChild(colDiv);
     }
 }
-insertItems(1, 10, container);
+insertItems(1, 10, container, 'jpg');
 
 // INSERT GYROS
-insertItems(11, 14, container2);
+insertItems(11, 14, container2, 'jpg');
 
 // INSERT DRINKS
-insertItems(15, 23, container3);
+insertItems(15, 23, container3, 'png');
 // for (let i = 11; i < 15; i++) {
 //     const colDiv = document.createElement('div');
 //     colDiv.classList.add('col-10', 'offset-1', 'offset-md-0', 'col-md-6', 'col-lg-4', 'my-4');
