@@ -1,167 +1,17 @@
+// import { menu } from './menuData.js';
+
 const container = document.querySelector('#container');
 const container2 = document.querySelector('#container2');
 const container3 = document.querySelector('#container3');
 const pizzaScroll = document.querySelector('.pizzaScroll');
 const baseURL = 'https://raw.githubusercontent.com/BncPntk/Pizza/main/images/menu/'
+// CART MODAL ELEMENTS
+const payBtn = document.querySelector('#payBtn');
+const tbodyId = document.querySelector('#tbodyId');
+const money = document.querySelector('#money');
 
 // NUMBER OF ITEMS IN CART
 const badgeNmb = document.querySelector('#cartBtnBadge');
-
-
-const menu = [
-    {},
-    {
-        id: 1,
-        name: 'FELICE /QUATTRO FORMAGGI',
-        desc: `Fontina, pecorino, gorgonzola, mozzarella, extra szűz olívaolaj, bazsalikom
-    (allergének:glutén,laktóz)`,
-        price: '2490',
-    },
-    {
-        id: 2,
-        name: 'NONNA /NAPOLETANA',
-        desc: `Paradicsom, szardella, fekete olívabogyó, kapribogyó, mozzarella, extra szűz olívaolaj
-    (allergének: glutén, laktóz, hal)`,
-        price: '2490',
-    }, {
-        id: 3,
-        name: 'PAOLINA /SALAME NAPOLI',
-        desc: `Nápolyi szalámi, édes pepperoni, kaliforniai paprika, parmezán, bazsalikom, mozzarella, extra szűz olívaolaj, aszalt paradicsom
-    (allergének: glutén, laktóz)`,
-        price: '2999',
-    },
-    {
-        id: 4,
-        name: 'SIMONETTA /SPIANATA SALAME',
-        desc: `Paradicsom, spianata szalámi, parmezán, mozzarella, bazsalikom, extra szűz olívaolaj
-        (allergének: glutén, laktóz)`,
-        price: '2490',
-    },
-    {
-        id: 5,
-        name: 'CRISTINA /P.CRUDO',
-        desc: `Paradicsom, prosciutto crudo, parmezán, mozzarella, extra szűz olívaolaj, rukkola
-        (allergének:glutén)`,
-        price: '2990',
-    },
-    {
-        id: 6,
-        name: 'MARINARA',
-        desc: `Paradicsom, oregánó, fokhagyma, extra szűz olivaolaj
-        (allergének: glutén)`,
-        price: '1690',
-    },
-    {
-        id: 7,
-        name: 'MARGHERITA',
-        desc: `Paradicsom, mozzarella, parmezán, bazsalikom, extra szűz olívaolaj
-        (allergének: glutén, laktóz)`,
-        price: '1990',
-    },
-    {
-        id: 8,
-        name: 'CARLOTTA /CARBONARA',
-        desc: `Pancetta, pacorino, tojás, mozzarella, tört feketebors, extra szűz olívaolaj
-        (allergének:glutén,tojás)`,
-        price: '2490',
-    },
-    {
-        id: 9,
-        name: 'BELLA /BLT',
-        desc: `Paradicsom, pancetta, parmezán, mozzarella, vöröshagyma, extra szűz olívaolaj, rukkola
-        (allergének: glutén, laktóz)`,
-        price: '2690',
-    },
-    {
-        id: 10,
-        name: 'VINCENZA /VEGA',
-        desc: `Paradicsom, padlizsán, cukkini, kaliforniai paprika, parmezán, mozzarella, bazsalikom, extra szűz olívaolaj, fenyőmag
-        (allergének: glutén, földimogyoró)`,
-        price: '2890',
-    },
-    {
-        id: 11,
-        name: 'Basic pita',
-        desc: `Fetakrém, tzatziki, olívabogyó, paradicsom, hagyma, csirkecomb`,
-        price: '1790',
-    },
-    {
-        id: 12,
-        name: 'Extra pita',
-        desc: `Eredeti görög feta sajt, eredeti görög joghurt, Cserpes füstölt sajt, répasaláta, tzatziki, olívabogyó, paradicsom, hagyma, extra mennyiségű csirkecomb`,
-        price: '2090',
-    },
-    {
-        id: 13,
-        name: 'Jalapeno pita',
-        desc: `eredeti görög feta sajt, eredeti görög joghurt, olívabogyó, paradicsom, hagyma, jalapeno paprika, csirkecomb`,
-        price: '2090',
-    },
-    {
-        id: 14,
-        name: 'Gyros tál',
-        desc: `eredeti görög feta sajt, eredeti görög joghurt, olívabogyó, paradicsom, hagyma, csirkecomb, fűszeres hasábburgonya`,
-        price: '2490',
-    },
-    {
-        id: 15,
-        name: '0,5l CocaCola',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 16,
-        name: '0,5l CocaCola Zero',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 17,
-        name: '0,5l Cherry Coke',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 18,
-        name: '0,5l Fanta citrom-bodza',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 19,
-        name: '0,5l FuzeTea Zero Citrom zöld tea',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 20,
-        name: '0,5l FuzeTea Citrom fekete tea',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 21,
-        name: '0,5l Fanta narancs',
-        desc: ``,
-        price: '450',
-    },
-    {
-        id: 22,
-        name: '0,5l Naturaqua szénsavmentes',
-        desc: ``,
-        price: '350',
-    },
-    {
-        id: 23,
-        name: '0,33l CocaCola Zero Citrom',
-        desc: ``,
-        price: '350',
-    },
-
-
-]
-
-
 
 
 // FORMAT PRICE
@@ -208,6 +58,7 @@ const insertItems = function (imageFrom, imageTo, destination, titleMargin, imgT
         input.setAttribute('min', 1);
         input.setAttribute('max', 5);
         input.setAttribute('required', '');
+        input.setAttribute('value', 1);
         const pPrice = document.createElement('p');
         pPrice.classList.add('text-center', 'text-primary', 'fw-bold', 'priceText');
         pPrice.innerHTML = `${menu[i].price}`;
@@ -227,7 +78,7 @@ const insertItems = function (imageFrom, imageTo, destination, titleMargin, imgT
         destination.appendChild(colDiv);
     }
 }
-
+// INSERT PIZZA
 insertItems(1, 10, container, 'my-3', 'jpg');
 
 // INSERT GYROS
@@ -263,13 +114,8 @@ let finalName = '';
 let finalQty = 0;
 let finalPrice = 0;
 let grandTotal = 0;
+let grandGrandTotal = 0;
 
-
-let inCart = [{
-    name: '',
-    qty: '',
-    price: '',
-}];
 let inputs = ['',];
 
 quantityInputs.forEach((btn, nmb) => {
@@ -299,10 +145,72 @@ buttons.forEach((btn, nmb) => {
         finalPrice = finalPrice.replace(',', '');
 
         grandTotal = Number(finalPrice) * finalQty;
+        grandGrandTotal += grandTotal;
+
         console.log('Név: ', finalName);
         console.log('Végösszeg: ', grandTotal);
         console.log('Egységár: ', finalPrice);
         console.log('db:', quantityValue);
+        console.log('Végvégösszeg: ', grandGrandTotal);
     });
 
+    //  CART MODAL
+    btn.addEventListener('click', () => {
+
+        // ADD ITEM DIVS IN CART MODAL
+        const trDiv = document.createElement('tr');
+        const tdDiv = document.createElement('td');
+        tdDiv.classList.add('col-2');
+        const p = document.createElement('p');
+        p.innerHTML = `${finalPrice} Ft`;
+        p.classList.add('mt-1');
+        p.setAttribute('id', 'itemName');
+        //PRICE
+        const tdDiv2 = document.createElement('td');
+        tdDiv2.classList.add('col-8', 'text-start');
+        const p2 = document.createElement('p');
+        p2.innerHTML = `${finalName}`;
+        p2.classList.add('mt-1');
+        // QT
+        const tdDiv3 = document.createElement('td');
+        tdDiv3.classList.add('col-1');
+        const input = document.createElement('input');
+        input.classList.add('mt-1', 'text-center');
+        input.setAttribute('id', 'cartQ');
+        input.setAttribute('type', 'number');
+        input.setAttribute('style', 'width: 5rem');
+        input.setAttribute('min', 1);
+        input.setAttribute('max', 5);
+        input.setAttribute('required', '');
+        input.setAttribute('style', 'width: 60px');
+        input.value = quantityValue;
+        // DELETE
+        const tdDiv4 = document.createElement('td');
+        tdDiv4.classList.add('col-1');
+        const btn = document.createElement('button');
+        btn.classList.add('btn', 'btn-danger')
+        btn.setAttribute('id', 'deleteBtn');
+        btn.innerHTML = 'Törlés';
+
+        // APPEND
+        tbodyId.appendChild(trDiv);
+        // PRICE
+        trDiv.appendChild(tdDiv);
+        tdDiv.appendChild(p);
+        // NAME
+        trDiv.appendChild(tdDiv2);
+        tdDiv2.appendChild(p2);
+        // QT
+        trDiv.appendChild(tdDiv3);
+        tdDiv3.appendChild(input);
+        // DELETE
+        trDiv.appendChild(tdDiv4);
+        tdDiv4.appendChild(btn);
+
+        money.innerHTML = `${grandGrandTotal} Ft`;
+    })
+
+
 });
+
+

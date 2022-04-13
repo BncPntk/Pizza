@@ -127,7 +127,7 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12 col-lg-5">
                   <form>
                     <div class="form-group">
                       <label for="name">
@@ -178,53 +178,31 @@
                     </div>
                   </form>
                 </div>
-                <div class="col-md-7 text-center">
+                <div class="col-md-12 col-lg-7 text-center">
                   Kosár tartalma
                   <div class="col">
                     <hr />
                     <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col-1">#</th>
+                          <th scope="col-1">Ár</th>
                           <th scope="col-10" class="text-start">Név</th>
                           <th scope="col-1">Mennyiség</th>
                           <th scope="col-1">Szerkesztés</th>
                         </tr>
                       </thead>
                       <tbody id="tbodyId">
-                        <tr>
-                          <th class="col-1" scope="row"></th>
-                          <td class="col-10 text-start">
-                            <p id="itemName" class="mt-1">Pizza Pizza</p>
-                          </td>
-                          <td class="col-1">
-                            <input
-                              id="cartQ"
-                              type="number"
-                              name=""
-                              id=""
-                              min="0"
-                              style="width: 60px"
-                              class="mt-1"
-                            />
-                          </td>
-                          <td class="col-1">
-                            <button id="deleteBtn" class="btn btn-danger">Törlés</button>
-                          </td>
-                        </tr>
+                        <tr></tr>
                       </tbody>
                     </table>
                     <div class="row">
                       <div class="col-8">
                         <h5 class="">
                           Összesen fizetendő
-                          <p id="money" class="">
-                            eqwewe
-                            <span>Ft</span>
-                          </p>
+                          <p id="money" class=""></p>
                         </h5>
                       </div>
-                      <div id="payBtn" class="btn col-4 btn-danger btn-lg mt-2">Fizetés</div>
+                      <div id="payBtn" class="btn col-4 btn-danger btn-lg mt-5">Fizetés</div>
                     </div>
                   </div>
                 </div>
@@ -309,6 +287,7 @@
       </div>
     </footer>
 
+    <script src="menuData.js"></script>
     <script src="script.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script

@@ -172,3 +172,7 @@ body {
     padding: 0.2rem;
   }
 }
+
+#money {
+  font-size: 2rem;
+}
