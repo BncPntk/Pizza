@@ -20,14 +20,19 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <!-- BOOSTRAP ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>Pizza</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand mx-5" href="#">&ensp;Pizza&ensp;</a>
+        <a class="navbar-brand mx-3" href="index.html">&ensp;Pizza&ensp;</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -50,11 +55,22 @@
             <li class="nav-item">
               <a href="#kinalatUdito" id="foglalasbtn" class="nav-link">&ensp;Üditő&ensp;</a>
             </li>
+
             <li class="nav-item">
-              <a href="#kinalatUdito" id="foglalasbtn" class="nav-link">&ensp;Asztal Foglalás&ensp;</a>
+              <a href="#elerhetoseg" id="infobtn" class="nav-link">&ensp;Elérhetőség&ensp;</a>
             </li>
-            <li class="nav-item">
-              <a href="#" id="infobtn" class="nav-link">&ensp;Elérhetőség&ensp;</a>
+
+            <li class="nav-item d-flex justify-content-end">
+              <button
+                id="cartBtn"
+                type="button"
+                class="nav-link btn shadow-none"
+                data-bs-toggle="modal"
+                data-bs-target="#cartModal"
+              >
+                <i id="" class="bi bi-basket text-light basketIcon"></i>
+                <span id="cartBtnBadge" class="badge"></span>
+              </button>
             </li>
           </ul>
         </div>
@@ -77,7 +93,9 @@
 
             <div class="row align-items-center">
               <div class="col-lg5">
-                <button id="homeFoglalasBtn" class="btn btn-lg mt-3 mt-md-4">Asztalt foglalok</button>
+                <button id="homeFoglalasBtn" class="btn btn-lg mt-3 mt-md-4 shadow-none">
+                  Asztalt foglalok
+                </button>
               </div>
             </div>
             <img
@@ -98,39 +116,132 @@
         dolorum saepe corporis beatae reiciendis doloribus voluptates! Unde, veniam dicta!
       </p>
     </div>
+    <!-- KOSÁR MODAL -->
+    <div id="cartModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kosár</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5">
+                  <form>
+                    <div class="form-group">
+                      <label for="name">
+                        Teljes név
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="name" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">
+                        Email cím
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="email" type="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">
+                        Telefon szám
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="phone" type="text" class="form-control" />
+                    </div>
+                    <div class="row g-3">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="phone">
+                            Város
+                            <span class="text-danger">*</span>
+                          </label>
+                          <input id="phone" type="text" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="phone">
+                            Utca
+                            <span class="text-danger">*</span>
+                          </label>
+                          <input id="phone" type="text" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="phone">Egyéb megjegyzés</label>
+                        <input id="phone" type="text" class="form-control" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-7 text-center">
+                  Kosár tartalma
+                  <div class="col">
+                    <hr />
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col-1">#</th>
+                          <th scope="col-10" class="text-start">Név</th>
+                          <th scope="col-1">Mennyiség</th>
+                          <th scope="col-1">Szerkesztés</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyId">
+                        <tr>
+                          <th class="col-1" scope="row"></th>
+                          <td class="col-10 text-start">
+                            <p id="itemName" class="mt-1">Pizza Pizza</p>
+                          </td>
+                          <td class="col-1">
+                            <input
+                              id="cartQ"
+                              type="number"
+                              name=""
+                              id=""
+                              min="0"
+                              style="width: 60px"
+                              class="mt-1"
+                            />
+                          </td>
+                          <td class="col-1">
+                            <button id="deleteBtn" class="btn btn-danger">Törlés</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="row">
+                      <div class="col-8">
+                        <h5 class="">
+                          Összesen fizetendő
+                          <p id="money" class="">
+                            eqwewe
+                            <span>Ft</span>
+                          </p>
+                        </h5>
+                      </div>
+                      <div id="payBtn" class="btn col-4 btn-danger btn-lg mt-2">Fizetés</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
+      <button id="btnTop" onclick="btnUp()" class="btnTop"><i class="bi bi-arrow-up-circle-fill"></i></button>
+
       <h2 id="kinalatPizza" class="display-2 text-center mt-3">Pizzák</h2>
       <hr />
 
-      <div id="container" class="row text-center">
-        <!-- DIV START -->
-        <!-- <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 my-4">
-          <div class="card">
-            <img src="images/pizzas/1.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </p>
-              <div class="form-outline d-flex justify-content-center my-1 mb-3">
-                <input
-                  type="number"
-                  id="typeNumber"
-                  class="form-control text-center"
-                  style="width: 5rem"
-                  min="1"
-                  max="12"
-                />
-              </div>
-              <p><span class="text-center text-primary">2300 Ft</span></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- DIV END -->
-      </div>
+      <div id="container" class="row text-center"></div>
     </div>
 
     <div id="homeBorder" class="container-fluid"></div>
@@ -145,12 +256,58 @@
 
     <div id="homeBorder" class="container-fluid"></div>
 
+    <!-- ÜDITŐ -->
     <div class="container">
-      <h2 id="kinalat" class="display-2 text-center mt-3">Üdítők</h2>
+      <h2 id="kinalatUdito" class="display-2 text-center mt-3">Üdítők</h2>
       <hr />
 
       <div id="container3" class="row text-center"></div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer-own text-white text-center text-lg-start mt-5">
+      <div class="container p-4 text-center">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-6 mb-md-0">
+            <h5 id="elerhetoseg" class="text-uppercase">Elérhetőségünk</h5>
+
+            <p>
+              <a
+                class="text-decoration-none text-reset"
+                href="https://www.google.com/maps/search/+4831+Tiszaszalka,+Bem+rakpart+719/@47.8572317,19.5791811,8z/data=!3m1!4b1?hl=en"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+                4831 Tiszaszalka, Bem rakpart 719.
+              </a>
+              <br />
+              <i class="fas fa-phone-square-alt"></i>
+              +36/30 420-1111
+              <br />
+              <i class="fas fa-envelope-square"></i>
+              pizza.pizza@gmail.com
+            </p>
+          </div>
+
+          <div class="col-md-12 col-lg-6 mb-6 mb-md-0">
+            <h5 class="text-uppercase">Kapcsolat</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white footer-icons"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#!" class="text-white footer-icons"><i class="bi bi-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="index.html">pizza</a>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
     <!-- Bootstrap Bundle with Popper -->
