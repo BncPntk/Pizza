@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- BOOSTRAP ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Pizza | Főoldal</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-3" href="index.html">&ensp;Pizza&ensp;</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mx-5 mx-md-4" id="mainNavbar">
+          <ul class="navbar-nav text-uppercase">
+            <li class="nav-item">
+              <a href="#kinalatPizza" id="pizzaBtn" onclick="scroll()" class="nav-link">&ensp;Pizza&ensp;</a>
+            </li>
+            <li class="nav-item">
+              <a href="#kinalatGyros" id="gyrosbtn" class="nav-link">&ensp;Gyros&ensp;</a>
+            </li>
+            <li class="nav-item">
+              <a href="#kinalatUdito" id="foglalasbtn" class="nav-link">&ensp;Üditő&ensp;</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#elerhetoseg" id="infobtn" class="nav-link">&ensp;Elérhetőség&ensp;</a>
+            </li>
+
+            <li class="nav-item d-flex justify-content-end">
+              <button
+                id="cartBtn"
+                type="button"
+                class="nav-link btn shadow-none"
+                data-bs-toggle="modal"
+                data-bs-target="#cartModal"
+              >
+                <i id="" class="bi bi-basket text-light basketIcon"></i>
+                <span id="cartBtnBadge" class="badge"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="parallax">
+          <div class="col-lg-5 text-center pt-5">
+            <div class="text-uppercase">
+              <h2 class="text display-3">
+                Házhozszállítás
+                <br />
+                10
+                <sup>00</sup>
+                -23
+                <sup>00</sup>
+              </h2>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-lg5">
+                <button id="homeFoglalasBtn" class="btn btn-lg mt-3 mt-md-4 shadow-none">
+                  Asztalt foglalok
+                </button>
+              </div>
+            </div>
+            <img
+              id="homeUtalvany"
+              class="mt-4 mt-md-4"
+              src="images/payments2.png"
+              alt="Erzsébet utalvánnyal is fizethet"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Homerolunk" class="Homerolunk container-fluid mt-0 text-center">
+      <h2 id="kinalat" class="display-2 mt-0 pt-5 pb-2">Rólunk</h2>
+      <p class="kinalatP mx-auto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ut deleniti totam est fugit,
+        soluta ullam voluptate vero omnis quisquam maiores nobis modi officiis ratione placeat nisi odio sit
+        dolorum saepe corporis beatae reiciendis doloribus voluptates! Unde, veniam dicta!
+      </p>
+    </div>
+    <!-- KOSÁR MODAL -->
+    <div id="cartModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Kosár</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 col-lg-5">
+                  <form class="">
+                    <div class="form-group">
+                      <label for="name">
+                        Teljes név
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="name" type="text" class="form-control shadow-none" />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">
+                        Email cím
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="email" type="email" class="form-control shadow-none" />
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">
+                        Telefon szám
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input id="phone" type="text" class="form-control shadow-none" />
+                    </div>
+                    <div class="row g-3">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="phone">
+                            Város
+                            <span class="text-danger">*</span>
+                          </label>
+                          <input id="phone" type="text" class="form-control shadow-none" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="phone">
+                            Utca
+                            <span class="text-danger">*</span>
+                          </label>
+                          <input id="phone" type="text" class="form-control shadow-none" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="phone">Egyéb megjegyzés</label>
+                        <input id="phone" type="text" class="form-control shadow-none" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-12 col-lg-7 text-center">
+                  Kosár tartalma
+                  <div class="col">
+                    <hr />
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col-1">Ár</th>
+                          <th scope="col-10" class="text-start">Név</th>
+                          <th scope="col-1">Mennyiség</th>
+                          <th scope="col-1">Szerkesztés</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyId">
+                        <tr></tr>
+                      </tbody>
+                    </table>
+                    <div class="row">
+                      <div class="col-8">
+                        <h5 class="">
+                          Összesen fizetendő
+                          <p id="money" class=""></p>
+                        </h5>
+                      </div>
+                      <div id="payBtn" class="btn col-4 btn-danger btn-lg mt-5">Fizetés</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <button id="btnTop" onclick="btnUp()" class="btnTop"><i class="bi bi-arrow-up-circle-fill"></i></button>
+
+      <h2 id="kinalatPizza" class="display-2 text-center mt-3">Pizzák</h2>
+      <hr />
+
+      <div id="container" class="row text-center"></div>
+    </div>
+
+    <div id="homeBorder" class="container-fluid"></div>
+
+    <!-- GYROS -->
+    <div class="container">
+      <h2 id="kinalatGyros" class="display-2 text-center mt-3">Gyrosok</h2>
+      <hr />
+
+      <div id="container2" class="row text-center"></div>
+    </div>
+
+    <div id="homeBorder" class="container-fluid"></div>
+
+    <!-- ÜDITŐ -->
+    <div class="container">
+      <h2 id="kinalatUdito" class="display-2 text-center mt-3">Üdítők</h2>
+      <hr />
+
+      <div id="container3" class="row text-center"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-own text-white text-center text-lg-start mt-5">
+      <div class="container p-4 text-center">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-6 mb-md-0">
+            <h5 id="elerhetoseg" class="text-uppercase">Elérhetőségünk</h5>
+
+            <p>
+              <a
+                class="text-decoration-none text-reset"
+                href="https://www.google.com/maps/search/+4831+Tiszaszalka,+Bem+rakpart+719/@47.8572317,19.5791811,8z/data=!3m1!4b1?hl=en"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+                4831 Tiszaszalka, Bem rakpart 719.
+              </a>
+              <br />
+              <i class="fas fa-phone-square-alt"></i>
+              +36/30 420-1111
+              <br />
+              <i class="fas fa-envelope-square"></i>
+              pizza.pizza@gmail.com
+            </p>
+          </div>
+
+          <div class="col-md-12 col-lg-6 mb-6 mb-md-0">
+            <h5 class="text-uppercase">Kapcsolat</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white footer-icons"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#!" class="text-white footer-icons"><i class="bi bi-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="index.html">pizza</a>
+      </div>
+    </footer>
+
+    <script src="menuData.js"></script>
+    <script src="script.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
