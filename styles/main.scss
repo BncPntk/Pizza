@@ -48,6 +48,7 @@ body {
   }
   .parallax {
     background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/main/images/para_pizzabg2.png');
+
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -93,7 +94,9 @@ body {
   #homeBorder {
     width: 100%;
     height: 250px;
+
     background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/9604a9b8e3ca25eb8491848e830984341ad9576e/images/wave2.svg');
+
     background-color: $color-main-0;
     background-repeat: no-repeat;
     background-size: cover;
