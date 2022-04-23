@@ -47,7 +47,11 @@ body {
     text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.6);
   }
   .parallax {
+<<<<<<< HEAD
     background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/main/images/para_pizzabg2.png');
+=======
+    background-image: url('/images/para_pizzabg2.png');
+>>>>>>> 9604a9b8e3ca25eb8491848e830984341ad9576e
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -93,7 +97,11 @@ body {
   #homeBorder {
     width: 100%;
     height: 250px;
+<<<<<<< HEAD
     background-image: url('https://raw.githubusercontent.com/BncPntk/Pizza/9604a9b8e3ca25eb8491848e830984341ad9576e/images/wave2.svg');
+=======
+    background-image: url('/images/wave2.svg');
+>>>>>>> 9604a9b8e3ca25eb8491848e830984341ad9576e
     background-color: $color-main-0;
     background-repeat: no-repeat;
     background-size: cover;
