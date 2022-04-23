@@ -28,7 +28,7 @@ for (let i = 1; i < 24; i++) {
 
 }
 
-// INSERT PIZZA
+// INSERT ITEMS
 const insertItems = function (imageFrom, imageTo, destination, titleMargin, imgType, imgSizeAtr, imgSizeClass) {
     for (let i = imageFrom; i <= imageTo; i++) {
         const colDiv = document.createElement('div');
@@ -51,7 +51,7 @@ const insertItems = function (imageFrom, imageTo, destination, titleMargin, imgT
         const inputDiv = document.createElement('div');
         inputDiv.classList.add('form-outline', 'd-flex', 'justify-content-center', 'my-1', 'mb-3');
         const input = document.createElement('input');
-        input.classList.add('form-control', 'text-center');
+        input.classList.add('form-control', 'text-center', 'shadow-none');
         input.setAttribute('id', 'typeNumber');
         input.setAttribute('type', 'number');
         input.setAttribute('style', 'width: 5rem');
@@ -118,6 +118,10 @@ let grandGrandTotal = 0;
 
 let inputs = ['',];
 
+// DELETE CART
+
+
+
 quantityInputs.forEach((btn, nmb) => {
     inputs.push(btn);
 
@@ -159,6 +163,8 @@ buttons.forEach((btn, nmb) => {
 
         // ADD ITEM DIVS IN CART MODAL
         const trDiv = document.createElement('tr');
+        trDiv.setAttribute('id', 'id' + nmb);
+        console.log('Item ID:', 'id' + nmb);
         const tdDiv = document.createElement('td');
         tdDiv.classList.add('col-2');
         const p = document.createElement('p');
@@ -192,6 +198,9 @@ buttons.forEach((btn, nmb) => {
         btn.setAttribute('id', 'deleteBtn');
         btn.innerHTML = 'Törlés';
 
+
+
+
         // APPEND
         tbodyId.appendChild(trDiv);
         // PRICE
@@ -208,9 +217,11 @@ buttons.forEach((btn, nmb) => {
         tdDiv4.appendChild(btn);
 
         money.innerHTML = `${grandGrandTotal} Ft`;
+
+
+
     })
 
 
 });
-
 
